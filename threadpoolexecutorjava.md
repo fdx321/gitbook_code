@@ -25,7 +25,7 @@
 
 下面是ThreadPoolExecutor最主要的一个构造函数。
 
-```
+```java
 public ThreadPoolExecutor(int corePoolSize,
                           int maximumPoolSize,
                           long keepAliveTime,
@@ -88,7 +88,7 @@ _RejectedExecutionHandler_，当task被reject的时候，调用该handler。默�
 
 ThreadPoolExecutor还提供了一些钩子方法，用于在线程执行的某个阶段做些处理，比如打印日志、数据统计等。如：
 
-```
+```java
 beforeExecute(Thread, Runnable)
 afterExecute(Runnable, Throwable)
 
@@ -100,7 +100,7 @@ afterExecute(Runnable, Throwable)
 
 一个可暂停的线程池
 
-```
+```java
 class PausableThreadPoolExecutor extends ThreadPoolExecutor {
   private boolean isPaused;
   private ReentrantLock pauseLock = new ReentrantLock();
@@ -154,7 +154,7 @@ corePoolSize 和 maximumPoolSize 都是 nThreads\(因为用了ubounded queue，m
 
 keepAliveTime为0，表示idle线程不自动停止。
 
-```
+```java
 return new ThreadPoolExecutor(nThreads, nThreads,
                               0L, TimeUnit.MILLISECONDS,
                               new LinkedBlockingQueue<Runnable>());
@@ -171,7 +171,7 @@ keepAliveTime为0，表示idle线程不自动停止。
 
 外层用了代理类，提供了finalize功能，不可配置，只暴露的一些接口，使返回的Executor不可配置。
 
-```
+```java
 return new FinalizableDelegatedExecutorService
            (new ThreadPoolExecutor(1, 1,
                                    0L, TimeUnit.MILLISECONDS,
@@ -187,7 +187,7 @@ keepAliveTime为60S, idle线程超过这个时间后会被回收；
 
 corePoolSize为0和maximumPoolSize为最大。
 
-```
+```java
 return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                               60L, TimeUnit.SECONDS,
                               new SynchronousQueue<Runnable>());

@@ -8,7 +8,7 @@
 
 创建一个**固定线程数**的线程池，它使用一个**无界**\(队列长度Integer.MAX\_VALUE\)的queue. 最多有nThreads个线程在执行中，如果有额外的task进来且没有空闲的线程，这个task将被放入queue中，直到有空闲线程。池中的线程将一直存在，除非显示的调用shutdown\/shutdownNow停掉。
 
-```
+```java
 public static ExecutorService newFixedThreadPool(int nThreads)
 public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory);
 
@@ -18,7 +18,7 @@ public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory thr
 
 只有**一个线程**， 使用一个**无界**queue, 能保证任务顺序执行。
 
-```
+```java
 public static ExecutorService newSingleThreadExecutor()
 public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory)
 
@@ -28,7 +28,7 @@ public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactor
 
 创建一个按需的线程池，如果没有空闲的线程，就创建一个新线程并加入到pool中，如果一个线程已经空闲超过60S了，就终止它。
 
-```
+```java
 public static ExecutorService newCachedThreadPool();
 public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory);
 
@@ -40,7 +40,7 @@ public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory);
 
 创建一个单线程的执行器，该执行器具有调度的功能，可以delay一段时间执行，或按一定的频率执行
 
-```
+```java
 public static ScheduledExecutorService newSingleThreadScheduledExecutor()
 public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory)
 
@@ -50,7 +50,7 @@ public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFa
 
 创建一个指定大小的线程池，具有调度的功能。_corePoolSize_: pool里的线程数量
 
-```
+```java
 public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize)
 public static ScheduledExecutorService newScheduledThreadPool(
             int corePoolSize, ThreadFactory threadFactory)
@@ -61,7 +61,7 @@ public static ScheduledExecutorService newScheduledThreadPool(
 
 通过DelegatedExecutorService\/DelegatedScheduledExecutorService代理一个Executor，代理后的Executor不能被修改配置，达到一个保护的效果。
 
-```
+```java
 public static ExecutorService unconfigurableExecutorService(ExecutorService executor)
 public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor)
 

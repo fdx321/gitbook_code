@@ -2,14 +2,11 @@
 
 * [Introduction](README.md)
 * [JDK 1.8 源码](chapter1.md)
-  * [concurrent package](concurrent-package.md)
-    * 原子类
-    * [线程](线程.md)
-      * [Executor.java](executorjava.md)
-      * [ExecutorService.java](executorservicejava.md)
-      * [Executors.java](executorsjava.md)
-      * [ThreadPoolExecutor.java](threadpoolexecutorjava.md)
-
-
-
+    * [concurrent package](concurrent-package.md)
+        * [原子类](原子类.md)
+        * [线程](线程.md)
+            * [Executor.java](executorjava.md)
+            * [ExecutorService.java](executorservicejava.md)
+            * [Executors.java](executorsjava.md)
+            * [ThreadPoolExecutor.java](threadpoolexecutorjava.md)
 

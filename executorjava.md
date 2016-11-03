@@ -1,3 +1,5 @@
+# Executor.java
+
 ### **介绍**
 
 ```
@@ -24,24 +26,27 @@ executor.execute(new RunnableTask1());
 ### **使用方式**
 
 1. Executor接口没有强制要求执行的任务是异步的，可以这样用：
+
   ```
   class DirectExecutor implements Executor {
   public void execute(Runnable r) {
-   r.run();
+  r.run();
   }
   }
 
   ```
 
 2. 但更典型的用法是在另一个新开的线程中执行任务，达到异步的效果：
+
   ```
   class ThreadPerTaskExecutor implements Executor {
   public void execute(Runnable r) {
-   new Thread(r).start();
+  new Thread(r).start();
   }
   }
 
   ```
 
 3. 还有一些更复杂的用法，在executor中控制任务什么时候已怎样的方式被执行
+
 

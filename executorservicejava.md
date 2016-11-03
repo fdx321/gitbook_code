@@ -25,7 +25,7 @@ ExecutorService是能能够被关闭的，一旦被关闭，它就拒绝接受�
 
 一个简单的网络服务端代码样例。
 
-```
+```java
 class NetworkService implements Runnable {
   private final ServerSocket serverSocket;
   private final ExecutorService pool;

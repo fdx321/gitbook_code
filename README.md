@@ -4,5 +4,4 @@
 
 可以在这里阅读在线版本：
 
-https:\/\/www.gitbook.com\/book\/fdx321\/gitbook\_code\/details
-
+https://www.gitbook.com/book/fdx321/gitbook_code/details
